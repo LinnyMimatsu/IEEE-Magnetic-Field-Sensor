@@ -1,3 +1,10 @@
+
+/*
+Name: Dom
+Description: Using an AD22151 Magnetic Field Sensor to detect a magnet which controls a servo motor 
+and sorts the "ore" from magnetic to non-magnetic
+*/
+
 #include <Servo.h>
 
 Servo myservo;
