@@ -16,6 +16,8 @@ int servoPos = 0;
 float lowThreshold = 1.;
 float highThreshold = 2.150;
 
+int angle = 15;
+
 
 void setup() {
   Serial.begin(9600);
@@ -31,7 +33,6 @@ void loop() {
   // Read sensor
   sensorValue = analogRead(hallPin);
   voltage = sensorValue * (refVoltage / 1023.0);
-
 
   // ---- SERIAL OUTPUT ----
   Serial.print("Raw: ");
@@ -51,18 +52,37 @@ void loop() {
   // ---- MOTOR CONTROL ----
   if (voltage < lowThreshold) {
     Serial.println("  | Motor ON (Below 1.8V)");
-    myservo.write(120);
-    delay(500);
+
+      while(angle != 90){
+        
+        myservo.write(++angle);
+
+    delay(3);
+
+      }
   } 
   else if (voltage > highThreshold) {
     Serial.println("  | Motor ON (Above 2.0V)");
-    myservo.write(120);
-    delay(500);
+
+    while(angle != 90){
+        
+        myservo.write(++angle);
+
+    delay(3);
+
+
+      }
 
   } else {
-    Serial.println("  | Motor OFF");
-    myservo.write(90);
-    delay(15);
+    Serial.println("  | Motor OFF"); 
+    
+    while(angle != 15){
+        
+        myservo.write(--angle);
+       delay(3);
+
+      
+    }
 
   }
 
