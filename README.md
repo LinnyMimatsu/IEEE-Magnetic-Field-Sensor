@@ -3,7 +3,7 @@ The IEEE-Magnetic-Field-Sensor.asc file must be ran in LT Spice to be able to ch
 To club members: if you want to add on to this repository or update the code in here, message me on discord and I will add you as a collaborator.
 ___
 **Reminders:**
-- The Servo motor and Magnetic Field Sensor must be plugged into a power source in order to operate properly.
+- The Servo motor and Magnetic Field Sensor must be plugged into a power source (5V) in order to operate properly.
 (I believe the Magnetic Field Sensor can be plugged into the 5V slot on the Arduino)
 
 - The Sensor and Arduino must share the same ground
